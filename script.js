@@ -1,59 +1,47 @@
 const text =
-"Você atravessou um portal esquecido. As sombras se movem ao longe. Não há garantias do que encontrará adiante.";
+"Você entrou em um portal de fantasia sombria. Explore e descubra mais.";
 
 let i = 0;
 
 function typeWriter(){
-    if(i < text.length){
-        document.getElementById("typed").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 50);
-    }
+if(i < text.length){
+document.getElementById("typed").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeWriter,40);
+}
 }
 
 typeWriter();
 
-for(let i = 0; i < 150; i++){
+for(let i=0;i<120;i++){
 
-    const rain = document.createElement("div");
+const p=document.createElement("div");
 
-    rain.classList.add("rain");
+p.classList.add("particle");
 
-    rain.style.left =
-        Math.random() * 100 + "vw";
+p.style.left=Math.random()*100+"vw";
 
-    rain.style.animationDuration =
-        (Math.random() * 2 + 1) + "s";
+p.style.animationDuration=
+(Math.random()*8+4)+"s";
 
-    rain.style.animationDelay =
-        Math.random() * 5 + "s";
+p.style.animationDelay=
+Math.random()*5+"s";
 
-    document.body.appendChild(rain);
+document.getElementById("particles")
+.appendChild(p);
 }
 
-setInterval(() => {
-
-    const flash =
-        document.getElementById("flash");
-
-    flash.style.opacity = "0.8";
-
-    setTimeout(() => {
-        flash.style.opacity = "0";
-    }, 100);
-
-}, 7000);
+const music =
+document.getElementById("music");
 
 document
-.getElementById("enterBtn")
-.addEventListener("click", () => {
+.getElementById("musicBtn")
+.addEventListener("click",()=>{
 
-    const audio =
-        document.getElementById("ambient");
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
 
-    audio.play();
-
-    alert(
-        "A jornada começou..."
-    );
 });
