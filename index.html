@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Portal do Abismo</title>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    color:red;
+    font-family:monospace;
+    overflow:hidden;
+}
+
+h1{
+    text-align:center;
+    margin-top:20%;
+    font-size:60px;
+    animation:glitch 0.3s infinite;
+}
+
+@keyframes glitch{
+    0%{transform:translate(2px,0);}
+    25%{transform:translate(-2px,2px);}
+    50%{transform:translate(2px,-2px);}
+    75%{transform:translate(-2px,-2px);}
+    100%{transform:translate(2px,2px);}
+}
+
+.fog{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:radial-gradient(circle,
+    rgba(255,0,0,0.05),
+    rgba(0,0,0,0.9));
+    animation:pulse 5s infinite;
+}
+
+@keyframes pulse{
+    50%{opacity:.5;}
+}
+</style>
+
+</head>
+<body>
+
+<div class="fog"></div>
+
+<h1>BEM-VINDO AO ABISMO</h1>
+
+</body>
+</html>
