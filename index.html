@@ -3,57 +3,295 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O FILHO DE SATAN</title>
 
-<link rel="stylesheet" href="style.css">
+<title>O FILHO DE SATANIC</title>
 
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#000;
+font-family:'Cinzel',serif;
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+}
+
+/* Névoa */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at center,
+rgba(255,0,0,.06),
+rgba(0,0,0,.98));
+animation:fog 10s infinite alternate;
+pointer-events:none;
+}
+
+@keyframes fog{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.2);
+}
+}
+
+/* Partículas */
+
+.particle{
+position:fixed;
+width:3px;
+height:3px;
+background:#700;
+border-radius:50%;
+animation:float linear infinite;
+pointer-events:none;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-10vh);
+}
+}
+
+/* Card */
+
+.card{
+
+width:100%;
+max-width:420px;
+
+background:
+rgba(10,10,10,.75);
+
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,0,0,.25);
+
+border-radius:25px;
+
+overflow:hidden;
+
+box-shadow:
+0 0 30px rgba(255,0,0,.2);
+
+text-align:center;
+
+position:relative;
+z-index:2;
+
+}
+
+/* Banner */
+
+.banner{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+/* Avatar */
+
+.avatar{
+
+width:130px;
+height:130px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+margin-top:-65px;
+
+border:4px solid #600;
+
+box-shadow:
+0 0 30px rgba(255,0,0,.5);
+
+}
+
+/* Título */
+
+.title{
+
+font-size:2rem;
+
+margin-top:15px;
+
+color:#d00000;
+
+text-shadow:
+0 0 10px #700;
+
+animation:glitch .3s infinite;
+
+}
+
+@keyframes glitch{
+
+0%{
+transform:translate(0);
+}
+
+25%{
+transform:translate(-1px,1px);
+}
+
+50%{
+transform:translate(1px,-1px);
+}
+
+75%{
+transform:translate(-1px,-1px);
+}
+
+100%{
+transform:translate(1px,1px);
+}
+
+}
+
+.subtitle{
+
+padding:10px 20px;
+
+color:#bbb;
+
+font-size:.9rem;
+
+}
+
+/* Links */
+
+.links{
+
+padding:20px;
+
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+.links a{
+
+text-decoration:none;
+
+color:white;
+
+background:#111;
+
+border:1px solid #600;
+
+padding:15px;
+
+border-radius:12px;
+
+transition:.3s;
+
+}
+
+.links a:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 20px rgba(255,0,0,.4);
+
+}
+
+.footer{
+
+padding:20px;
+
+font-size:.75rem;
+
+color:#777;
+
+}
+
+</style>
 </head>
 <body>
 
-<div id="particles"></div>
-<div id="fog"></div>
+<div class="card">
 
-<header>
-    <img src="assets/avatar.jpg" class="avatar">
+<img src="assets/banner.gif" class="banner">
 
-    <h1 class="glitch" data-text="BEM-VINDO AO ABISMO">
-        BEM-VINDO AO INFERNO
-    </h1>
+<img src="assets/avatar.jpg" class="avatar">
 
-    <h2>O FILHO DE SATAN</h2>
+<h1 class="title">
+O FILHO DE SATAN
+</h1>
 
-    <p id="typed"></p>
+<p class="subtitle">
+"As sombras observam em silêncio."
+</p>
 
-    <div class="buttons">
-        <a href="https://www.tiktok.com/@_zyranx" target="_blank">
-            TikTok
-        </a>
+<div class="links">
 
-        <a href="https://discord.com/users/1401125698139066369" target="_blank">
-            Discord
-        </a>
-    </div>
+<a target="_blank"
+href="https://www.tiktok.com/@_zyranx">
+TikTok
+</a>
 
-    <button id="musicBtn">
-        🔊 Música
-    </button>
-</header>
+<a target="_blank"
+href="https://discord.com/users/1401125698139066369">
+Discord
+</a>
 
-<section class="about">
-    <h2>Sobre Mim</h2>
+<a target="_blank"
+href="https://www.roblox.com/share?code=b4a6c8a2043d2f4ab7009a278b56eefe&type=Profile&source=ProfileShare&stamp=1781900406659">
+Roblox
+</a>
 
-    <p>
-        Explorando tecnologia, criatividade,
-        design e universos sombrios de fantasia.
-    </p>
-</section>
+</div>
 
-<audio id="music" loop>
-    <source src="assets/ambient.mp3" type="audio/mpeg">
-</audio>
+<div class="footer">
+© O FILHO DE SATAN
+</div>
 
-<script src="script.js"></script>
+</div>
+
+<script>
+
+for(let i=0;i<120;i++){
+
+const p=document.createElement("div");
+
+p.className="particle";
+
+p.style.left=Math.random()*100+"vw";
+
+p.style.animationDuration=
+(Math.random()*8+4)+"s";
+
+p.style.animationDelay=
+Math.random()*5+"s";
+
+document.body.appendChild(p);
+
+}
+
+</script>
 
 </body>
 </html>
