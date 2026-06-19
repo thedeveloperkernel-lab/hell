@@ -1,0 +1,116 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    color:#aa0000;
+    font-family:Consolas, monospace;
+    overflow:hidden;
+    height:100vh;
+}
+
+.container{
+    position:absolute;
+    width:100%;
+    top:40%;
+    transform:translateY(-50%);
+    text-align:center;
+    z-index:2;
+}
+
+.glitch{
+    font-size:4rem;
+    position:relative;
+    animation:glitch 0.2s infinite;
+}
+
+.glitch::before,
+.glitch::after{
+    content:attr(data-text);
+    position:absolute;
+    left:0;
+    width:100%;
+}
+
+.glitch::before{
+    color:red;
+    left:2px;
+}
+
+.glitch::after{
+    color:darkred;
+    left:-2px;
+}
+
+@keyframes glitch{
+    0%{transform:translate(0);}
+    25%{transform:translate(-2px,2px);}
+    50%{transform:translate(2px,-2px);}
+    75%{transform:translate(-2px,-2px);}
+    100%{transform:translate(2px,2px);}
+}
+
+#typed{
+    margin-top:30px;
+    font-size:1.2rem;
+    min-height:80px;
+}
+
+#enterBtn{
+    margin-top:30px;
+    padding:15px 35px;
+    background:#220000;
+    color:#fff;
+    border:1px solid #880000;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#enterBtn:hover{
+    transform:scale(1.1);
+}
+
+#fog{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle,
+    rgba(255,0,0,.05),
+    rgba(0,0,0,.95));
+    animation:fog 8s infinite alternate;
+}
+
+@keyframes fog{
+    from{transform:scale(1);}
+    to{transform:scale(1.2);}
+}
+
+#flash{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:white;
+    opacity:0;
+    pointer-events:none;
+}
+
+.rain{
+    position:absolute;
+    width:2px;
+    height:100px;
+    background:rgba(180,0,0,.5);
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-100px);
+    }
+    to{
+        transform:translateY(110vh);
+    }
+}
